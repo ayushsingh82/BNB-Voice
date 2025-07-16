@@ -33,6 +33,11 @@ To provide an efficient, secure, and transparent invoicing platform that empower
 - Automated reminders for unpaid invoices.  
 - Real-time tracking of payment statuses.  
 
+- 📧 **Email Notifications**: Sends beautiful HTML emails with invoice details
+- 📊 **Daily Summaries**: Sends daily reports to admin
+- 🔄 **Automated Reminders**: Can be scheduled to run automatically
+- 📋 **Detailed Logging**: Tracks all email sending activities
+
 ### **Secure and Scalable**  
 - Built on the Request Network, ensuring secure and immutable transactions.  
 - Scalable for businesses of any size.  

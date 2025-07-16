@@ -5,7 +5,6 @@ This Python script automatically sends email notifications for pending invoices 
 ## Features
 
 - 📧 **Email Notifications**: Sends beautiful HTML emails with invoice details
-- 💾 **Database Storage**: SQLite database to store invoice and email logs
 - 📊 **Daily Summaries**: Sends daily reports to admin
 - 🔄 **Automated Reminders**: Can be scheduled to run automatically
 - 📋 **Detailed Logging**: Tracks all email sending activities
