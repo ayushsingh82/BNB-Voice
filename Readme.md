@@ -24,6 +24,7 @@ To provide an efficient, secure, and transparent invoicing platform that empower
 - Track **total cash inflow and outflow** with comprehensive stats.  
 - Visualize financial data through charts and graphs.  
 - Credit score evaluation based on cash flow patterns.  
+- Fair3 token rewards based on the activities and from overall dashboard calculation
 
 ### **User-Friendly Dashboard**  
 - Manage invoices, payments, and stats from a single interface.  
