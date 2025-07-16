@@ -84,7 +84,7 @@ const CreateInvoice = () => {
     postalCode: ''
   });
 
-  const [selectedChain, setSelectedChain] = useState('');
+  const [selectedChain, setSelectedChain] = useState('bnb');
 
   const [products, setProducts] = useState([
     {
@@ -105,31 +105,6 @@ const CreateInvoice = () => {
           <path d="M12.116 14.404L16 10.52L19.886 14.406L22.146 12.146L16 6L9.856 12.144L12.116 14.404Z" fill="white"/>
           <path d="M16 21.48L12.116 17.596L9.856 19.856L16 26L22.146 19.854L19.886 17.594L16 21.48Z" fill="white"/>
           <path d="M16 18.194L18.194 16L16 13.806L13.806 16L16 18.194Z" fill="white"/>
-        </svg>
-      )
-    },
-    {
-      id: 'polygon',
-      name: 'Polygon',
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 32 32" fill="none">
-          <path d="M16 0C7.164 0 0 7.164 0 16s7.164 16 16 16 16-7.164 16-16S24.836 0 16 0z" fill="#8247E5"/>
-          <path d="M21.092 13.12c-.483-.275-1.1-.275-1.583 0l-2.567 1.514-1.733 1.024-2.567 1.514c-.483.275-1.1.275-1.583 0l-2.033-1.178a1.556 1.556 0 01-.775-1.337V12.52c0-.55.292-1.062.775-1.337l2.033-1.145c.483-.275 1.1-.275 1.583 0l2.033 1.145c.483.275.775.787.775 1.337v1.514l1.733-1.024v-1.514a1.556 1.556 0 00-.775-1.337l-3.767-2.169c-.483-.275-1.1-.275-1.583 0L8.5 9.681A1.556 1.556 0 007.725 11.018v4.338c0 .55.292 1.062.775 1.337l3.767 2.169c.483.275 1.1.275 1.583 0l2.567-1.514 1.733-1.024 2.567-1.514c.483-.275 1.1-.275 1.583 0l2.033 1.178c.483.275.775.787.775 1.337v2.136c0 .55-.292 1.062-.775 1.337l-2 1.145c-.483.275-1.1.275-1.583 0l-2.033-1.145a1.556 1.556 0 01-.775-1.337v-1.514l-1.733 1.024v1.514c0 .55.292 1.062.775 1.337l3.767 2.169c.483.275 1.1.275 1.583 0l3.767-2.169c.483-.275.775-.787.775-1.337v-4.338a1.556 1.556 0 00-.775-1.337l-3.8-2.169z" fill="#fff"/>
-        </svg>
-      )
-    },
-    {
-      id: 'ethereum',
-      name: 'Ethereum',
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 32 32" fill="none">
-          <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#627EEA"/>
-          <path d="M16.498 4V12.87L23.995 16.22L16.498 4Z" fill="white" fillOpacity="0.602"/>
-          <path d="M16.498 4L9 16.22L16.498 12.87V4Z" fill="white"/>
-          <path d="M16.498 21.968V27.995L24 17.616L16.498 21.968Z" fill="white" fillOpacity="0.602"/>
-          <path d="M16.498 27.995V21.967L9 17.616L16.498 27.995Z" fill="white"/>
-          <path d="M16.498 20.573L23.995 16.22L16.498 12.872V20.573Z" fill="white" fillOpacity="0.2"/>
-          <path d="M9 16.22L16.498 20.573V12.872L9 16.22Z" fill="white" fillOpacity="0.602"/>
         </svg>
       )
     }
@@ -355,38 +330,19 @@ ${sellerInfo.companyName}
               {/* Chain Selector */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Select Blockchain Network
+                  Blockchain Network
                 </label>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {chains.map((chain) => (
-                    <motion.button
-                      key={chain.id}
-                      onClick={() => setSelectedChain(chain.id)}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      type="button"
-                      className={`p-3 rounded-xl border-2 transition-all ${
-                        selectedChain === chain.id
-                          ? 'border-emerald-500 bg-emerald-50'
-                          : 'border-gray-200 hover:border-emerald-200'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        {chain.icon}
-                        <div className="text-left">
-                          <p className="font-semibold text-gray-900">{chain.name}</p>
-                          <p className="text-xs text-gray-500">
-                            {selectedChain === chain.id ? 'Selected' : 'Click to select'}
-                          </p>
-                        </div>
-                        {selectedChain === chain.id && (
-                          <div className="ml-auto">
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                          </div>
-                        )}
-                      </div>
-                    </motion.button>
-                  ))}
+                <div className="p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50">
+                  <div className="flex items-center gap-3">
+                    {chains[0].icon}
+                    <div className="text-left">
+                      <p className="font-semibold text-gray-900">{chains[0].name}</p>
+                      <p className="text-xs text-gray-500">Selected</p>
+                    </div>
+                    <div className="ml-auto">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
